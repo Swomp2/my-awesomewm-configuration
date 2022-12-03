@@ -1,0 +1,23 @@
+font:
+    normal:
+        family: "Source Code Pro"
+        style: "Regular"
+
+    bold:
+        family: "Source Code Pro"
+        style: "Bold"
+
+    italic:
+        family: "Source Code Pro"
+        style: "Italic"
+
+    bold_italic:
+        family: "Source Code Pro"
+        style: "Bold Italic"
+
+    size: 6.0
+
+colors:
+    primary:
+        background: "#2e3440"
+        foreground: "#d8dee9"
