@@ -748,6 +748,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Launching the required applications
 awful.spawn.with_shell("volumeicon")
 awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("udiskie -A -N -s -q &")
 awful.spawn.with_shell('setxkbmap -layout us,ru -option "grp:win_space_toggle"')
 awful.spawn.with_shell("nitrogen --restore &")
