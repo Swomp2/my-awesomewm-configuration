@@ -409,7 +409,7 @@ globalkeys = gears.table.join(
 
     -- Brightness controls
     awful.key({}, "XF86MonBrightnessDown", function () os.execute("brightnessctl s 5%-") end),
-    awful.key({}, "XF86MonBrightnessUp", function () os.execute("brightnessctl s +5%") end),
+   awful.key({}, "XF86MonBrightnessUp", function () os.execute("brightnessctl s +5%") end),
 
     -- Volume controls
     awful.key({}, "XF86AudioRaiseVolume", function () os.execute("pactl set-sink-volume @DEFAULT_SINK@ +5%") end),
@@ -431,6 +431,11 @@ globalkeys = gears.table.join(
     ),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
+
+    -- Lockscreen
+
+    awful.key({ modkey, "Control"   }, "l", function () awful.spawn.with_shell("i3lock -c 3B4252") end,
+              {description = "execute i3lock"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
@@ -746,10 +751,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Launching the required applications
-awful.spawn.with_shell("volumeicon")
-awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("blueman-applet")
-awful.spawn.with_shell("udiskie -A -N -s -q &")
-awful.spawn.with_shell('setxkbmap -layout us,ru -option "grp:win_space_toggle"')
 awful.spawn.with_shell("nitrogen --restore &")
-
